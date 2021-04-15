@@ -13,21 +13,25 @@ b=IMG(:,:,3);       %Again, but blue
 IMGmod = IMG;       %Making a copy of IMG, IMGmod for modified 
 %Find all pixels of more than 200 red, set all other pixels to white
 red = z;            %Creating red, a new array of the same dimensions as the image, with the third dimension all set to 0 for now (z is defined on line 8 with these properties)
-for i = 1:x         %Iterate through every x value
-    for j = 1:y     %and every y value
-        if IMGmod(i,j,1) < 200 || IMGmod(i,j,2) > 100 || IMGmod(i,j,3) > 100    %Check each pixel, see if red value is <200, or blue > 100 or green >100 (basically any of these means that the pixel isn't sufficiently red to be caught by our filter)
-            IMGmod(i,j,1) = 255;    %Set the color at these pixels to white
+for i = 1:x         %Iterate through every x val
+    for j = 1:y
+        if IMGmod(i,j,1) < 200 || IMGmod(i,j,2) > 100 || IMGmod(i,j,3) > 100
+            IMGmod(i,j,1) = 255;
             IMGmod(i,j,2) = 255;
             IMGmod(i,j,3) = 255;
         else
-            %Otherwise, we have a very red pixel, no change to IMGmod is needed, we'll leave these pixels the red color that they were
-            red(i,j)=255;   %This is just saving the data in a different way. 'red' is a grayscale image that is black everywhere and white where the desired color is located
+            red(i,j)=255;
         end
     end
 end
 
-%These displays override each other, only the last one is shown
+%Z(:,:,1) = 0;
+%Z(:,:,2) = 0;
+%Z(:,:,3) = r;
 dispimg(IMG);
 dispimg(IMGmod);
 %dispimg(red);
 
+
+%Y = [0.299*r + 0.587*g + 0.114*b];
+%dispimg(Y);
