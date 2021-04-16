@@ -1,7 +1,7 @@
 IMG=readjpg('tux.jpg'); %Open image in local directory using readjpg.m file
-sisize(IMG);     %calculate the size (for now, get these results and manually change the x and y on the next line
-x = 500;        %dimensions of the image
-y = 500;
+s = size(IMG);     %calculate the size (for now, get these results and manually change the x and y on the next line
+x = s(1);        %dimensions of the image
+y = s(2);
 r=zeros(x,y);          %Create several 3D arrays, with dimensions of the image, but 0s as the values at all locations
 g=zeros(x,y); 
 b=zeros(x,y);
@@ -28,6 +28,13 @@ end
 
 %These displays override each other, only the last one is shown
 dispimg(IMG);
-dispimg(IMGmod);
-dispimg(red);
+%dispimg(IMGmod);
+%dispimg(red);
 
+%color_finder(IMG 200 255 0 100 0 100) -format for fn, returns IMGmod
+%high level will do IMG=readjpg('tux.jpg');
+%   high level can then do: dispimg(color_finder(IMG 200 255 0 100 0 100);
+%TODO
+%Make this a function, taking in the rgb ranges to sort for, return IMGmod
+%Write an image to a file as an output
+%Stretch goal: basic object detection 

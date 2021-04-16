@@ -28,10 +28,13 @@ end
 
 %These displays override each other, only the last one is shown
 dispimg(IMG);
-dispimg(IMGmod);
+%dispimg(IMGmod);
 %dispimg(red);
 
-%color_finder(200 255 0 100 0 100) -format for fn
+%color_finder(IMG 200 255 0 100 0 100) -format for fn, returns IMGmod
+%high level will do: IMG=readjpg('tux.jpg');
+%high level can then do: dispimg(color_finder(IMG 200 255 0 100 0 100);
+
 
 %TODO
 %Make this a function, taking in the rgb ranges to sort for, return IMGmod
