@@ -37,6 +37,6 @@ dispimg(IMG);
 
 
 %TODO
-%Make this a function, taking in the rgb ranges to sort for, return IMGmod
+%[X] Make this a function, taking in the rgb ranges to sort for, return IMGmod
 %Write an image to a file as an output
 %Stretch goal: basic object detection 
