@@ -28,7 +28,7 @@ end
 
 %These displays override each other, only the last one is shown
 dispimg(IMG);
-%dispimg(IMGmod);
+dispimg(IMGmod);
 %dispimg(red);
 
 %color_finder(IMG 200 255 0 100 0 100) -format for fn, returns IMGmod
