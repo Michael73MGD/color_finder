@@ -1,3 +1,0 @@
-IMG=readjpg('tux.jpg'); %copy of final.
-modIMG = colorFinder(IMG,0,0,0,255,0,0);
-dispimg(modIMG);
