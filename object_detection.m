@@ -4,8 +4,7 @@ IMG=readjpg('tux2');
 [modIMG, grayscale] = colorFinder(IMG,200,255,0,100,0,100);       %red
 
 gray_copy = grayscale;
-s = size(grayscale);     %for some reason this needs to be run once, but
-%then not again once it is in the workspace
+s = size(IMG); 
 x = s(1);        %dimensions of the image
 y = s(2);
 
@@ -38,13 +37,13 @@ for i = 1:y         %Iterate through every x value
             %disp(current);
             countx = 0;
             county = 0;
-            size = length(current);
-            for h=1:2:size
+            current_size = length(current);
+            for h=1:2:current_size
                countx = countx + current(h); 
                county = county + current(h+1);
             end
-            midx = countx / (size/2);
-            midy = county / (size/2);
+            midx = countx / (current_size/2);
+            midy = county / (current_size/2);
             objects(end+1) = midx;
             objects(end+1) = midy;
         end
