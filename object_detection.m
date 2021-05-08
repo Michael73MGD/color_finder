@@ -9,15 +9,16 @@ x = s(1);        %dimensions of the image
 y = s(2);
 
 objects = [];
-d = 5;
+d = 5;  %This is the distance threshold for considering 2 pixels as part of the same object, decrease for a finer tune, but the count below may have to be increased, which will make the program take longer to run
 for i = 1:y         %Iterate through every x value
     for j = 1:x     %and every y value
         if (grayscale(i,j)==255)
             disp("RED found at "+i+", "+j);
             gray_copy(i,j) = 50;
             current = [i j];
+            prev_current = [];
             grayscale(i,j) = 0;
-            for c = 1:3
+            for c=1:3   %increase this loop from 3-10 to make it significantly more robost in finding pixels touching pixels for larger objects
                 for k = j:y
                     for g = 1:x
                         for h=1:2:length(current)
