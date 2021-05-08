@@ -1,4 +1,4 @@
-IMG=readjpg('tux2');
+IMG=readjpg('tux');
 
 %[modIMG, grayscale] = colorFinder(IMG,190,250,225,255,225,255);  %blue
 [modIMG, grayscale] = colorFinder(IMG,200,255,0,100,0,100);       %red
@@ -17,18 +17,20 @@ for i = 1:y         %Iterate through every x value
             gray_copy(i,j) = 50;
             current = [i j];
             grayscale(i,j) = 0;
-            for k = j:y
-                for g = 1:x
-                    for h=1:2:length(current)
-                        if(grayscale(k,g)==255)
-                            distance = sqrt( (k-current(h))^2+(g-current(h+1))^2 );
-                            %disp(distance);
-                            if (d > distance)
-                                current(end+1) = k;
-                                current(end+1) = g;
-                                %disp("working, adding "+k+", "+g);
+            for c = 1:3
+                for k = j:y
+                    for g = 1:x
+                        for h=1:2:length(current)
+                            if(grayscale(k,g)==255)
+                                distance = sqrt( (k-current(h))^2+(g-current(h+1))^2 );
                                 %disp(distance);
-                                grayscale(k,g) = 0;
+                                if (d > distance)
+                                    current(end+1) = k;
+                                    current(end+1) = g;
+                                    %disp("working, adding "+k+", "+g);
+                                    %disp(distance);
+                                    grayscale(k,g) = 0;
+                                end
                             end
                         end
                     end
