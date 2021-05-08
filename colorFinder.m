@@ -30,6 +30,6 @@ for i = 1:x         %Iterate through every x value
 end
 
 figure, dispimg(IMGmod);
-%figure, dispimg(grayscale);
+figure, dispimg(grayscale);
 
 end %func end
