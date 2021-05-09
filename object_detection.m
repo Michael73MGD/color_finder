@@ -1,5 +1,5 @@
 IMG=readjpg('tux');
-
+diary('results/gray_copy_coords.txt'); %txt file for coordinate outputs
 %[modIMG, grayscale] = colorFinder(IMG,190,250,225,255,225,255);  %blue
 [modIMG, grayscale] = colorFinder(IMG,200,255,0,100,0,100);       %red
 %[modIMG, grayscale] = colorFinder(IMG,240,255,190,245,80,140);      %yellow
@@ -57,6 +57,8 @@ dispimg(grayscale);
 for i=1:2:length(objects)
     gray_copy(round(objects(i)),round(objects(i+1))) = 150;
 end
+
+diary('off'); %end console recording
 
 dispimg(gray_copy);
 %imsave(); %user-dependent image saving

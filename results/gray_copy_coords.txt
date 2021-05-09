@@ -1,0 +1,3 @@
+RED found at 247, 234
+RED found at 249, 123
+RED found at 256, 181
