@@ -14,7 +14,7 @@ loop_count = 5;     %more is betterbut takes longer to run, 3 is sufficient for 
 for i = 1:y         %Iterate through every x value
     for j = 1:x     %and every y value
         if (grayscale(i,j)==255)
-            disp("RED found at "+i+", "+j);
+            disp("Object found at "+i+", "+j);
             gray_copy(i,j) = 50;
             current = [i j];
             grayscale(i,j) = 0;
