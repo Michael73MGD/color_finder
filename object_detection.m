@@ -10,11 +10,11 @@ y = s(2);
 
 objects = [];
 distance_threshold = 5;  %This is the distance threshold for considering 2 pixels as part of the same object, decrease for a finer tune, but the count below may have to be increased, which will make the program take longer to run
-loop_count = 5;     %increase this loop from 3-10 to make it significantly more robost in finding pixels touching pixels for larger objects
+loop_count = 5;     %more is betterbut takes longer to run, 3 is sufficient for red, 5 for yellow
 for i = 1:y         %Iterate through every x value
     for j = 1:x     %and every y value
         if (grayscale(i,j)==255)
-            disp("RED found at "+i+", "+j);
+            disp("Object found at "+i+", "+j);
             gray_copy(i,j) = 50;
             current = [i j];
             grayscale(i,j) = 0;
